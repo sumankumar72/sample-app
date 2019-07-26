@@ -35,13 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'ClassicUserAccounts',
     'sorl.thumbnail',
     'django.contrib.admin',
     'django.contrib.auth',
     'rest_framework',
-    'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
     'SampleAPI'
 ]
 
@@ -126,7 +125,7 @@ USE_TZ = True
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 print(STATIC_ROOT)
 
 
@@ -140,5 +139,5 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-django_heroku.settings(locals())
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# django_heroku.settings(locals())
