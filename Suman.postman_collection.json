@@ -1,0 +1,87 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Suman",
+		"_postman_id": "860cfdfb-8280-8e27-5a49-2a690c4a14eb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{base_url}}/api/token/",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user3@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Demo@123",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"url": "{{base_url}}/api/user/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"User\",\n    \"last_name\": \"6\",\n    \"email\": \"user6@gmail.com\",\n    \"mobile\": \"8826652399\",\n    \"password1\": \"Demo@123\",\n    \"password2\": \"Demo@123\",\n    \"date_of_birth\": \"1989-01-25\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile",
+			"request": {
+				"url": "{{base_url}}/api/me",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
