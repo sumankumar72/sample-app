@@ -26,7 +26,7 @@ SECRET_KEY = '*u+jyf(bh2n&5iwwlrcnfidkph=i0odi)4-jpvdu=*6^jw%ro@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sample-app72.herokuapp.com', ]
+ALLOWED_HOSTS = ['sampleapp.sumanshandilya.com', ]
 AUTH_USER_MODEL = 'ClassicUserAccounts.User'
 
 # Application definition
