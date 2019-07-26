@@ -27,4 +27,6 @@ urlpatterns = [
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('admin/', admin.site.urls),
     path('accounts/', include('ClassicUserAccounts.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
