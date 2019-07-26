@@ -1,0 +1,13 @@
+{% extends request.THEME_NAME|add:'classic_site_base.html' %}
+{% load static %}
+
+{% block side_menu %}
+`Place your Side menu here `
+
+<li>
+    <a href="{% url 'logout' %}">
+        <i class="fa fa-lock"></i> <span>Logout</span>
+        <span class="pull-right-container"></span>
+    </a>
+</li>
+{% endblock %}
